@@ -27,6 +27,7 @@ export default function SignUp({ navigation }) {
   const [password, setPassword] = useState('');
 
   function handleSubmit() {
+    console.tron.log(name, email, password);
     dispatch(signUpRequest(name, email, password));
   }
 

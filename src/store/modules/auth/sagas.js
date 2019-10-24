@@ -1,7 +1,6 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
-// import { toast } from 'react-toastify';
+import { showMessage } from 'react-native-flash-message';
 import api from '~/services/api';
-// import history from '~/services/history';
 import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
@@ -17,10 +16,13 @@ export function* signIn({ payload }) {
     api.defaults.headers.Authorization = `Baerer ${token}`;
 
     yield put(signInSuccess(token, user));
-
-    // history.push('/dashboard');
   } catch (err) {
-    // toast.error('Falha na autenticação, verifique seu email/senha');
+    showMessage({
+      message: 'Login',
+      description: 'Falha na autenticação, verifique seu email/senha',
+      type: 'danger',
+    });
+
     yield put(signFailure());
   }
 }
@@ -35,11 +37,17 @@ export function* signUp({ payload }) {
       password,
       provider: true,
     });
-    // toast.success('Usuário cadastrado!');
-
-    // history.push('/');
+    showMessage({
+      message: 'Cadastro de Usuário',
+      description: 'Usuário cadastrado com sucesso',
+      type: 'success',
+    });
   } catch (err) {
-    // toast.error('Falha no cadastro verifique seus dados!');
+    showMessage({
+      message: 'Cadastro de Usuário',
+      description: 'Falha no cadastro, verifique seus dados',
+      type: 'danger',
+    });
     yield put(signFailure());
   }
 }
@@ -53,7 +61,10 @@ export function setToken({ payload }) {
 }
 
 export function signOut() {
-  // history.push('/');
+  showMessage({
+    type: 'MeetApp',
+    message: 'Volte sempre!',
+  });
 }
 
 export default all([

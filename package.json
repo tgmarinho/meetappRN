@@ -16,6 +16,7 @@
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.61.2",
+    "react-native-flash-message": "^0.1.15",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-navigation-bar-color": "^1.0.0",
