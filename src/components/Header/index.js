@@ -7,9 +7,9 @@ import logo from '~/assets/logo.png';
 export const ImageContainer = styled.View`
   justify-content: center;
   align-items: center;
-  background: #000;
-  opacity: 0.3;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 20px;
+  z-index: -1;
 `;
 
 export default function Header() {
