@@ -81,7 +81,14 @@ function Dashboard() {
         <List
           data={meetups}
           keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <Card data={item} />}
+          renderItem={({ item }) => (
+            <Card
+              data={item}
+              register={() => {
+                console.tron.log('registering');
+              }}
+            />
+          )}
         />
       </Container>
     </Background>

@@ -67,21 +67,17 @@ function Registration() {
   return (
     <Background>
       <Container>
-        <DateContainer>
-          <Button>
-            <Icon name="chevron-left" size={40} color="#fff" />
-          </Button>
-
-          <Date>12 de maio</Date>
-          <Button>
-            <Icon name="chevron-right" size={40} color="#fff" />
-          </Button>
-        </DateContainer>
-
         <List
           data={meetups}
           keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <Card data={item} />}
+          renderItem={({ item }) => (
+            <Card
+              data={item}
+              cancel={() => {
+                console.tron.log('canceling');
+              }}
+            />
+          )}
         />
       </Container>
     </Background>

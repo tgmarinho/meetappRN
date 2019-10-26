@@ -8,15 +8,17 @@ import {
   DateTime,
   EventOrganizer,
   Banner,
-  ButtonSubscribe,
+  Button,
   TextButton,
   Address,
   Span,
 } from './styles';
 
-export default function Card({ data: meetup }) {
+export default function Card({ data: meetup, cancel = null, register = null }) {
   console.tron.log(meetup);
   // const { item: meetup } = meetup;
+
+  const textButton = register ? 'Realizar Inscrição' : 'Cancelar Inscrição';
 
   return (
     <Container>
@@ -41,9 +43,9 @@ export default function Card({ data: meetup }) {
           <EventOrganizer>Organizador: {meetup.user}</EventOrganizer>
         </Span>
 
-        <ButtonSubscribe>
-          <TextButton>Realizar Inscrição</TextButton>
-        </ButtonSubscribe>
+        <Button onPress={register || cancel}>
+          <TextButton>{textButton}</TextButton>
+        </Button>
       </Content>
     </Container>
   );

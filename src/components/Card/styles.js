@@ -45,7 +45,7 @@ export const Address = styled.Text`
   color: #999;
 `;
 
-export const ButtonSubscribe = styled(TouchableOpacity)`
+export const Button = styled(TouchableOpacity)`
   background: #e5556e;
   margin: 10px;
   padding: 10px;
