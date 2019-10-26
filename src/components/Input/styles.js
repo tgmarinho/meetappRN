@@ -14,7 +14,8 @@ export const TInput = styled.TextInput.attrs({
   placeholderTextColor: 'rgba(255,255,255, 0.8)',
 })`
   flex: 1;
-  font-size: 15px;
+  line-height: 21px;
+  font-size: 18px;
   margin-left: 10px;
   color: #fff;
 `;
