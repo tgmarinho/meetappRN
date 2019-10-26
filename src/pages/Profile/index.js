@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Image } from 'react-native';
 import Background from '~/components/Background';
 import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
-import logo from '~/assets/logo.png';
+
+import Header from '~/components/Header';
 
 import {
   Container,
@@ -14,7 +14,6 @@ import {
   FormInput,
   SubmitButton,
   LogoutButton,
-  ImageContainer,
 } from './styles';
 
 export default function Profile() {
@@ -57,9 +56,7 @@ export default function Profile() {
   return (
     <Background>
       <Container>
-        <ImageContainer>
-          <Image source={logo} style={{ width: 32, height: 34 }} />
-        </ImageContainer>
+        <Header />
 
         <Form>
           <FormInput

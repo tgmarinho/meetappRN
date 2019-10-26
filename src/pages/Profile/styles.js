@@ -7,13 +7,6 @@ export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const ImageContainer = styled.View`
-  justify-content: center;
-  align-items: center;
-  background: #22202c;
-  padding: 20px;
-`;
-
 export const Separator = styled.View`
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
@@ -32,10 +25,11 @@ export const FormInput = styled(Input)`
 `;
 
 export const SubmitButton = styled(Button)`
-  margin-top: 5px;
+  margin-top: 15px;
+  background: #e5556e;
 `;
 
 export const LogoutButton = styled(Button)`
-  margin-top: 10px;
-  background: #f64c75;
+  margin-top: 12px;
+  background: #d44059;
 `;

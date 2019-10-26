@@ -3,6 +3,7 @@ import { withNavigationFocus } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '~/services/api';
 
+import Header from '~/components/Header';
 import Background from '~/components/Background';
 import Card from '~/components/Card';
 
@@ -67,6 +68,7 @@ function Dashboard() {
   return (
     <Background>
       <Container>
+        <Header />
         <DateContainer>
           <Button>
             <Icon name="chevron-left" size={40} color="#fff" />
