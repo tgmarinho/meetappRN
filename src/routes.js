@@ -28,12 +28,13 @@ export default (isSigned = false) =>
             Profile,
           },
           {
-            // resetOnBlur: true,
+            resetOnBlur: true,
             tabBarOptions: {
               keyboardHidesTabBar: true,
               activeTintColor: '#fff',
               inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
               style: {
+                borderTopColor: '#2B1A2F',
                 backgroundColor: '#2B1A2F',
               },
             },

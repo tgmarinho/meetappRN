@@ -17,7 +17,7 @@ export const DateContainer = styled.View`
   align-items: center;
 `;
 
-export const Date = styled.Text`
+export const DateLabel = styled.Text`
   font-size: 24px;
   color: #fff;
   font-weight: bold;

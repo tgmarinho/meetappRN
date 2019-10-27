@@ -5,18 +5,15 @@ import {
   Container,
   Content,
   Title,
-  DateTime,
-  EventOrganizer,
   Banner,
   Button,
   TextButton,
-  Address,
   Span,
+  TextLabel,
 } from './styles';
 
 export default function Card({ data: meetup, cancel = null, register = null }) {
   console.tron.log(meetup);
-  // const { item: meetup } = meetup;
 
   const textButton = register ? 'Realizar Inscrição' : 'Cancelar Inscrição';
 
@@ -24,7 +21,7 @@ export default function Card({ data: meetup, cancel = null, register = null }) {
     <Container>
       <Banner
         source={{
-          uri: meetup.banner,
+          uri: meetup.banner.url,
         }}
       />
       <Content>
@@ -32,15 +29,15 @@ export default function Card({ data: meetup, cancel = null, register = null }) {
 
         <Span>
           <Icon name="date-range" size={16} color="#999" />
-          <DateTime>{meetup.date}</DateTime>
+          <TextLabel>{meetup.date}</TextLabel>
         </Span>
         <Span>
           <Icon name="location-on" size={16} color="#999" />
-          <Address>{meetup.location}</Address>
+          <TextLabel>{meetup.localization}</TextLabel>
         </Span>
         <Span>
           <Icon name="person" size={16} color="#999" />
-          <EventOrganizer>Organizador: {meetup.user}</EventOrganizer>
+          <TextLabel>Organizador: {meetup.user.name}</TextLabel>
         </Span>
 
         <Button onPress={register || cancel}>

@@ -12,42 +12,16 @@ Icon.loadFont();
 
 function Registration() {
   console.tron.log('teste2');
-  const [meetups, setMeetups] = useState([
-    {
-      title: 'Meetup de React Native',
-      date: '25 de Junho, as 20h',
-      location: 'Rua Guilherme Gembala',
-      user: 'Diego Fernandes',
-      banner:
-        'http://localhost:3333/files/c6d2832673f02e209f2b66bc78ef80b7.png',
-    },
-    {
-      title: 'Meetup de React Native',
-      date: '25 de Junho, as 20h',
-      location: 'Rua Guilherme Gembala',
-      user: 'Diego Fernandes',
-      banner:
-        'http://localhost:3333/files/c6d2832673f02e209f2b66bc78ef80b7.png',
-    },
-    {
-      title: 'Meetup de React Native',
-      date: '25 de Junho, as 20h',
-      location: 'Rua Guilherme Gembala',
-      user: 'Diego Fernandes',
-      banner:
-        'http://localhost:3333/files/c6d2832673f02e209f2b66bc78ef80b7.png',
-    },
-  ]);
+  const [meetups, setMeetups] = useState([]);
 
   useEffect(() => {
     async function loadMeetups() {
       const response = await api.get('meetups');
 
       setMeetups(response.data);
-      console.tron.log(response.data);
     }
 
-    // loadMeetups();
+    loadMeetups();
   }, []);
 
   async function handleCancel(id) {

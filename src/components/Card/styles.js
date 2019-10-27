@@ -31,16 +31,8 @@ export const Title = styled.Text`
   font-size: 20px;
   font-weight: bold;
 `;
-export const DateTime = styled.Text`
-  font-size: 16px;
-  color: #999;
-`;
-export const EventOrganizer = styled.Text`
-  font-size: 16px;
-  color: #999;
-`;
-
-export const Address = styled.Text`
+export const TextLabel = styled.Text`
+  margin-left: 10px;
   font-size: 16px;
   color: #999;
 `;

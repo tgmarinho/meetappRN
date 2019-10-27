@@ -9,7 +9,7 @@ import createRouter from './routes';
 export default function App() {
   useEffect(() => {
     function setAndroidNavigationBar() {
-      changeNavigationBarColor('#8d41a8');
+      changeNavigationBarColor('#000');
     }
 
     function handleAppStateChange(nextAppState) {
