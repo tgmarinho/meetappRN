@@ -15,7 +15,6 @@ import { Container, DateContainer, DateLabel, List, Button } from './styles';
 Icon.loadFont();
 
 function Dashboard({ isFocused }) {
-  console.tron.log('DASHBOARD');
   const [meetups, setMeetups] = useState([]);
   const [date, setDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
@@ -31,7 +30,6 @@ function Dashboard({ isFocused }) {
       const response = await api.get('meetups', {
         params: { date },
       });
-      // console.tron.log(response.data);
       const data = response.data.map(meetup => {
         return {
           ...meetup,
@@ -42,7 +40,6 @@ function Dashboard({ isFocused }) {
       });
       setMeetups(data);
       setLoading(false);
-      // console.tron.log(data);
     }
 
     loadMeetups();
@@ -89,7 +86,7 @@ function Dashboard({ isFocused }) {
             <Icon name="chevron-right" size={40} color="#fff" />
           </Button>
         </DateContainer>
-
+        {loading && <Loading />}
         {meetups.length > 0 ? (
           <List
             data={meetups}

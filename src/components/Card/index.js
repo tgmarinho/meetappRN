@@ -13,8 +13,6 @@ import {
 } from './styles';
 
 export default function Card({ data: meetup, cancel = null, register = null }) {
-  console.tron.log(meetup);
-
   const textButton = register ? 'Realizar Inscrição' : 'Cancelar Inscrição';
 
   return (

@@ -11,7 +11,7 @@ export const Container = styled.View`
 export default function Loading() {
   return (
     <Container>
-      <ActivityIndicator color="#F94D6A" size={150} />
+      <ActivityIndicator color="#F94D6A" size="large" />
     </Container>
   );
 }

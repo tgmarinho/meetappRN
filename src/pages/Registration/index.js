@@ -7,22 +7,19 @@ import { showMessage } from 'react-native-flash-message';
 import api from '~/services/api';
 import Header from '~/components/Header';
 import Background from '~/components/Background';
+import Loading from '~/components/Loading';
 import Empty from '~/components/Empty';
 import Card from '~/components/Card';
 import { Container, List } from './styles';
 
 function Registration({ isFocused }) {
-  console.tron.log('REGISTRATION');
   const [registrations, setRegistrations] = useState([]);
-  console.tron.log('Registration isFocused', isFocused);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadRegistrations() {
-      console.tron.log('LOADING REGISTRATION');
       const response = await api.get('registration');
-      console.tron.log(response);
       const data = response.data.registrations.map(registration => {
-        console.tron.log('REG: ', registration);
         return {
           id: registration.id,
           title: registration.meetup.title,
@@ -38,8 +35,8 @@ function Registration({ isFocused }) {
           ),
         };
       });
-      console.tron.log('novo: ', data);
       setRegistrations(data);
+      setLoading(false);
     }
 
     loadRegistrations();
@@ -48,6 +45,7 @@ function Registration({ isFocused }) {
   async function handleCancelation(id) {
     try {
       await api.delete(`registration/${id}`);
+      setRegistrations(registrations.filter(r => r.id !== id));
 
       showMessage({
         message: 'Inscrição',
@@ -68,6 +66,7 @@ function Registration({ isFocused }) {
       <Container>
         <Header />
 
+        {loading && <Loading />}
         {registrations.length > 0 ? (
           <List
             data={registrations}
