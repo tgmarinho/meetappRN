@@ -15,10 +15,10 @@ const TextLabel = styled.Text`
   margin-bottom: 30px;
 `;
 
-export default function Empty() {
+export default function Empty({ message }) {
   return (
     <Container>
-      <TextLabel>Sem eventos nessa data!</TextLabel>
+      {message && <TextLabel>{message}</TextLabel>}
       <Icon name="sentiment-very-dissatisfied" size={150} color="#F94D6A" />
     </Container>
   );

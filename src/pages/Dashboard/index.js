@@ -14,7 +14,8 @@ import { Container, DateContainer, DateLabel, List, Button } from './styles';
 
 Icon.loadFont();
 
-function Dashboard() {
+function Dashboard({ isFocused }) {
+  console.tron.log('DASHBOARD');
   const [meetups, setMeetups] = useState([]);
   const [date, setDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
@@ -24,15 +25,13 @@ function Dashboard() {
     [date]
   );
 
-  console.tron.log('data de hj', new Date());
-
   useEffect(() => {
     async function loadMeetups() {
       setLoading(true);
       const response = await api.get('meetups', {
         params: { date },
       });
-      console.tron.log(response.data);
+      // console.tron.log(response.data);
       const data = response.data.map(meetup => {
         return {
           ...meetup,
@@ -43,11 +42,11 @@ function Dashboard() {
       });
       setMeetups(data);
       setLoading(false);
-      console.tron.log(data);
+      // console.tron.log(data);
     }
 
     loadMeetups();
-  }, [date]);
+  }, [date, isFocused]);
 
   function handlePrevDay() {
     setDate(subDays(date, 1));
@@ -62,7 +61,7 @@ function Dashboard() {
       await api.post(`registration`, { meetup_id: id });
 
       showMessage({
-        message: 'Inscrição',
+        message: 'Meetups',
         description: `Inscrição realizada com sucesso`,
         type: 'success',
       });
@@ -100,7 +99,7 @@ function Dashboard() {
             )}
           />
         ) : (
-          <Empty />
+          <Empty message="Sem eventos nessa data!" />
         )}
       </Container>
     </Background>

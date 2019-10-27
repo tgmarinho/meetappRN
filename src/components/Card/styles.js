@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 import { TouchableOpacity, Image } from 'react-native';
 
 export const Container = styled.View`
-  flex: 1;
   background: #fff;
   border-radius: 4px;
   margin-top: 20px;
