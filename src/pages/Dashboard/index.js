@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import pt from 'date-fns/locale/pt';
 import { format, parseISO, subDays, addDays } from 'date-fns';
 import { showMessage } from 'react-native-flash-message';
+import PropTypes from 'prop-types';
 import api from '~/services/api';
 import Header from '~/components/Header';
 import Background from '~/components/Background';
@@ -111,3 +112,11 @@ Dashboard.navigationOptions = {
 };
 
 export default withNavigationFocus(Dashboard);
+
+Dashboard.propTypes = {
+  isFocused: PropTypes.bool,
+};
+
+Dashboard.defaultProps = {
+  isFocused: false,
+};

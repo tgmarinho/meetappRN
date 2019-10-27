@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -12,7 +13,7 @@ import {
   TextLabel,
 } from './styles';
 
-export default function Card({ data: meetup, cancel = null, register = null }) {
+export default function Card({ data: meetup, cancel, register }) {
   const textButton = register ? 'Realizar Inscrição' : 'Cancelar Inscrição';
 
   return (
@@ -45,3 +46,26 @@ export default function Card({ data: meetup, cancel = null, register = null }) {
     </Container>
   );
 }
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    meetup: PropTypes.shape({
+      user: PropTypes.shape({
+        name: PropTypes.string,
+      }),
+      banner: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+      title: PropTypes.string,
+      date: PropTypes.string,
+      localization: PropTypes.string,
+    }),
+  }).isRequired,
+  cancel: PropTypes.func,
+  register: PropTypes.func,
+};
+
+Card.defaultProps = {
+  cancel: null,
+  register: null,
+};

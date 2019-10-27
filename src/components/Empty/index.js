@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styled from 'styled-components/native';
+import PropTypes from 'prop-types';
 
 const Container = styled.View`
   flex: 1;
@@ -23,3 +24,11 @@ export default function Empty({ message }) {
     </Container>
   );
 }
+
+Empty.propTypes = {
+  message: PropTypes.string,
+};
+
+Empty.defaultProps = {
+  message: null,
+};

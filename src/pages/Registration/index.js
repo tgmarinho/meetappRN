@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import pt from 'date-fns/locale/pt';
 import { format, parseISO } from 'date-fns';
 import { showMessage } from 'react-native-flash-message';
+import PropTypes from 'prop-types';
 import api from '~/services/api';
 import Header from '~/components/Header';
 import Background from '~/components/Background';
@@ -91,3 +92,11 @@ Registration.navigationOptions = {
 };
 
 export default withNavigationFocus(Registration);
+
+Registration.propTypes = {
+  isFocused: PropTypes.bool,
+};
+
+Registration.defaultProps = {
+  isFocused: false,
+};
