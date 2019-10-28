@@ -1,3 +1,5 @@
+![Thiago Marinho](https://pbs.twimg.com/profile_banners/41742474/1490016588/1500x500)
+
 # Meetapp Mobile (React Native)
 
 In this challenge was built the mobile app with React Native of Meetapp that use the API developed in this [repository](https://github.com/tgmarinho/meetapp-api).
@@ -13,28 +15,38 @@ The project layout is attached to assets-challenge folder in this repository.
 ## SignIn / SignUp
 
 - [x] The user must be able to create account and authenticate using email and password.
-[](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/sign-mobile.png) | [](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/signup-mobile.png)
+* Login
+
+[](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/sign-mobile.png) 
+
+* Creating Account
+
+[](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/signup-mobile.png)
 
 ### Dashboard
 
 - [x] User must be able to browse meetups by date.
 - [x] Use infinite scroll on this page.
 - [x] From this screen the user must be able to sign up for a Meetup.
+
 ![](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/meetups-mobile.png)
 
 ### Registration
 
 - [x] The user must be able to view their meetup registration.
 - [x] In this screen the user can unsubscribe.
+
 ![](https://github.com/tgmarinho/meetapp/blob/master/screenshots/inscricoes-mobile.png)
 
 ### Profile
 
 - [x] The user must be able to edit their personal data.
 - [x] Use validation in the fields.
+
 ![](https://github.com/tgmarinho/meetapp/blob/master/screenshots/profile-mobile.png?raw=true)
 
 ### Infine Scroll (Meetup Screen)
+
 ![](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/sroll-mobile.png)
 
 
