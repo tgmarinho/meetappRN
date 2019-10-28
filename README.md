@@ -17,11 +17,11 @@ The project layout is attached to assets-challenge folder in this repository.
 - [x] The user must be able to create account and authenticate using email and password.
 * Login
 
-[](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/sign-mobile.png) 
+![](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/sign-mobile.png) 
 
 * Creating Account
 
-[](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/signup-mobile.png)
+![](https://raw.githubusercontent.com/tgmarinho/meetapp/master/screenshots/signup-mobile.png)
 
 ### Dashboard
 
